@@ -1,0 +1,85 @@
+import Joi from 'joi'
+import '../../../styles/formAuth.scss'
+import { Link, useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import { joiResolver } from '@hookform/resolvers/joi'
+import { useMutation } from '@tanstack/react-query'
+import axios from 'axios'
+import { useState } from 'react'
+const registerSchema = Joi.object({
+    email: Joi.string().email({ tlds: { allow: false } }).required(),
+    password: Joi.string().min(6).required()
+})
+type formType = {
+    email: string
+    password: string
+}
+const Login = () => {
+    const navigate = useNavigate()
+    const [isFail, setError] = useState(false)
+    const [stringError, setString] = useState('')
+    const {
+        register,
+        handleSubmit,
+        formState: {errors, isDirty }
+    }= useForm({
+        resolver: joiResolver(registerSchema),
+        defaultValues: {
+            email: '',
+            password: ''
+        }
+    })
+    const {mutate} = useMutation({
+        mutationFn: async(user: formType)=>{
+            const res = await axios.post(`http://localhost:8000/api/auth/login`, user)
+            return res
+        },
+        onSuccess: (res)=>{
+            alert('Đăng nhập thành công!')
+            localStorage.setItem('user', JSON.stringify(res.data.user))
+            navigate('/')
+        },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onError: (err: any)=>{
+           
+            const errorCath = err.response.data.message
+            setError(true)
+            setString(errorCath)
+        }
+    })
+    const onSubmit = (user: formType)=>{
+        mutate(user)
+    }
+  return (
+    <>
+      <div className="container">
+        <div className="sign_up_inner">
+             <h1>Đăng ký</h1>
+            <form onSubmit={handleSubmit(onSubmit)} action="">
+                <div className='inputType'>
+                    <label htmlFor="">Email</label>
+                    <input type="email" {...register('email', {required: true})} />
+                    {errors.email && <p className='text-danger'>{errors.email.message}</p>}
+
+                </div>
+                <div className='inputType'>
+                    <label htmlFor="">Password</label>
+                    <input type="password"{...register('password', {required: true, minLength: 3})} />
+                    {errors.password && <p className='text-danger'>{errors.password.message}</p>}
+                </div>
+                <div className="inputType">
+                      {isFail && <p style={{textAlign: 'center', fontSize: '1.4rem'}} className='text-danger'>{stringError}</p>}
+                </div>
+                <div className='form_action'>
+                        <button disabled={!isDirty}>Đăng Nhập</button>
+                        <span>Bạn chưa có tài khoản đăng ký <Link className='active_login' to={`/register`}>Tại đây!</Link></span>
+                </div>
+            </form>
+        </div>
+      </div>
+
+    </>
+  )
+}
+
+export default Login

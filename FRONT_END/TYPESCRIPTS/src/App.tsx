@@ -1,5 +1,6 @@
 import './App.scss'
-import Router from './Routes'
+import Router from './Routes' 
+import 'react-toastify/ReactToastify.css'
 function App() {
 
   return (

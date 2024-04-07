@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 const DetailPage = () => {
     const {id} = useParams()
-    const {data: product, } = useProductQuery({id: id!})
+    const {data: product, } = useProductQuery({id: id!, _expand: "category"})
     const {data: relatedProduct}= useQuery({
         queryKey: ["PRODUCT_RELATED"],
         queryFn: async()=>{
@@ -17,9 +17,10 @@ const DetailPage = () => {
             return data
         }
     })
+    console.log(product)
   return (
     <>
-      <ActionBar/>
+      <ActionBar action={product}/>
       <DetailProduct product={product}/>
       <Description/>
       <Related related={relatedProduct}/>

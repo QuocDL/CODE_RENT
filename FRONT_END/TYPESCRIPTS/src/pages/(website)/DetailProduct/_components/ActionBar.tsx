@@ -1,5 +1,6 @@
+import { IProduct } from "../../../../common/interfaces/IProduct"
 
-const ActionBar = () => {
+const ActionBar = ({action}: {action: IProduct}) => {
   return (
     <section className="action-bar">
     <div className="container">
@@ -25,8 +26,16 @@ const ActionBar = () => {
                 </a>
             </div>
             </div>
+            <div className="action-bar_inner_left_filter">
+                <span>{action?.category?.name}</span>
+            <div>
+                <a href="">
+                <img src="./img/arrownav.png" alt="" />
+                </a>
+            </div>
+            </div>
             <div className="action-bar_inner_left_showing">
-            <span>Asgaard sofa</span>
+            <span>{action.name}</span>
             </div>
         </div>
         </div>

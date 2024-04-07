@@ -8,6 +8,30 @@ $gl-lg : "screen and (max-width: 80em)"; // max 1280px
 .admin_list_inner {
     margin: 5% auto;
 
+
+}
+
+.product_action_list {
+    border: 1px solid black;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product_list_active{
+    border: 1px solid black;
+        height: 25px;
+        width: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F9F1E7;
+}
+.list_page_action {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 table {

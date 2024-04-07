@@ -32,7 +32,7 @@ const DetailProduct = ({product}: {product: IProduct}) => {
           <h2>{product?.name}</h2>
           <span>{convertCurrency.format(product?.price)}</span>
           <div className="detail_content__star">
-            <div className="star_fill">
+            <div className="flex gap-2">
               <img src="/public/star.png" alt="" />
               <img src="/public/star.png" alt="" />
               <img src="/public/star.png" alt="" />

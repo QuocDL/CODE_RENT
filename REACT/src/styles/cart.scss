@@ -1,0 +1,135 @@
+.cart {
+    &_inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    &_info {
+        width: 100%;
+    }
+
+    .cart_table {
+        border: none;
+        width: 100%;
+        border-collapse: collapse;
+
+        .cart_bg_nav {
+            th {
+                background-color: #F9F1E7;
+                padding: 16px 0px;
+            }
+
+            font-size: 1.6rem;
+        }
+
+        thead {
+            .theade_name {
+                padding-right: 50px;
+            }
+
+            .thead_price {
+                text-align: left;
+            }
+
+            .thead_quantity {
+                text-align: center;
+            }
+
+            .theade_subtotal {
+                text-align: left;
+            }
+        }
+
+        tbody {
+            .quantity_table {
+                font-size: 1.6rem;
+                padding: 4px 13px;
+                border: 1px solid #9f9f9f;
+                border-radius: 10px;
+            }
+
+            .tbody_name {
+                gap: 34px;
+                display: flex;
+                align-items: center;
+                font-size: 1.6rem;
+                color: #9f9f9f;
+            }
+
+            .tbody_price {
+                font-size: 1.6rem;
+                color: #9f9f9f;
+            }
+
+            .tbody_quantity {
+                text-align: center;
+            }
+
+            .tbody_subtotal {
+                font-size: 1.6rem;
+            }
+        }
+
+        tbody:before {
+            line-height: 5.5rem;
+            content: '.';
+            color: transparent;
+            display: block;
+        }
+    }
+
+    &_action {
+        width: 493px;
+        background-color: #F9F1E7;
+        padding: 0px 75px 95px 75px;
+
+        h4 {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 3.2rem;
+        }
+
+        &_subtotal {
+            font-size: 1.6rem;
+            margin-top: 65px;
+            display: flex;
+            justify-content: space-between;
+
+            .price {
+                color: #9f9f9f;
+            }
+        }
+
+        &_total {
+            font-size: 1.6rem;
+            margin-top: 31px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .price {
+                color: #B88E2F;
+                font-size: 2rem;
+            }
+        }
+
+        &_btn {
+            margin-top: 48px;
+            text-align: center;
+
+            a {
+                border: 1px solid #000;
+                border-radius: 15px;
+                font-size: 2rem;
+                padding: 14px 59px;
+            }
+
+            a:hover {
+                border: 1px solid #B88E2F;
+                color: #B88E2F;
+            }
+        }
+    }
+
+}

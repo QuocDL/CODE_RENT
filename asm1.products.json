@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "660a40048b44a924e2c6f0a8"
+  },
+  "name": "Only Up! with friend on steam 1",
+  "price": 2000,
+  "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2522520/capsule_616x353.jpg?t=1697828400",
+  "gallary": [],
+  "category": {
+    "$oid": "660a300b85f1d70676d0b6f5"
+  },
+  "createdAt": {
+    "$date": "2024-04-01T05:03:00.848Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-01T05:03:00.848Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "660a40078b44a924e2c6f0ab"
+  },
+  "name": "Only Up! with friend on steam 2",
+  "price": 2000,
+  "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2522520/capsule_616x353.jpg?t=1697828400",
+  "gallary": [],
+  "category": {
+    "$oid": "660a300b85f1d70676d0b6f5"
+  },
+  "createdAt": {
+    "$date": "2024-04-01T05:03:03.341Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-01T05:03:03.341Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "660a400a8b44a924e2c6f0ae"
+  },
+  "name": "Only Up! with friend on steam 3",
+  "price": 2000,
+  "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2522520/capsule_616x353.jpg?t=1697828400",
+  "gallary": [],
+  "category": {
+    "$oid": "660a300b85f1d70676d0b6f5"
+  },
+  "createdAt": {
+    "$date": "2024-04-01T05:03:06.089Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-01T05:03:06.089Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "660f6766299a4932c20f7187"
+  },
+  "name": "Càng Kỷ Luật, Càng Tự Do hehe",
+  "price": 1000000,
+  "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+  "gallary": [],
+  "category": {
+    "$oid": "660a300b85f1d70676d0b6f5"
+  },
+  "createdAt": {
+    "$date": "2024-04-05T02:52:22.889Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-05T02:52:22.889Z"
+  }
+}]

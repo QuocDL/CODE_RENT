@@ -515,8 +515,10 @@ html {
         transition: 0.3s ease-in-out;
         color: #fff;
 
-        button {
+        &__addtocart {
             width: 202px;
+            height: 55px;
+            background-color: white;
             font-size: 1.6rem;
             font-weight: 600;
             color: #B88E2F;
@@ -526,11 +528,13 @@ html {
         &__viewdetail {
             background-color: #f0f0f0;
             width: 202px;
-            text-align: center;
+            height: 45px;
             font-size: 1.6rem;
             font-weight: 600;
             color: #B88E2F;
-            padding: 10px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         &__viewdetail:hover {
