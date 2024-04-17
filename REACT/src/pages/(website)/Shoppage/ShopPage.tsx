@@ -10,7 +10,7 @@ import '../../../styles/shop.scss'
 import { ToastContainer } from 'react-toastify'
 const ShopPage = () => {
     const [params] = useSearchParams()
-    const [limit, setLimit] = useState(2)
+    const [limit, setLimit] = useState(4)
     const navigate = useNavigate()
     const page = params.get('page')
     const {data, isLoading} = useProductQuery({_page: page, _limit:limit, _expand: 'category'})

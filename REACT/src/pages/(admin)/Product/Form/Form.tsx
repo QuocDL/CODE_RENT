@@ -27,14 +27,17 @@ const AdminFormProduct = () => {
             const image = values.image[0].response
             mutate({...values, gallary, image})
         } catch (error) {
-            console.log(error)
+            const values = await form.validateFields()
+            const gallary = values.gallary.map((item: any) => item.response || item.url)
+            const image = values.image[0].response
+            mutate({...values, gallary, image})
         }
       }else{
          try {
             const values = await form.validateFields()
-            const gallary = values.gallary.map((item: any) => item.response)
-            const image = values.image[0].response
-            mutate({...values, gallary, image})
+            const newGallary = values.gallary.map((item: any) => item.response)
+            const newImage = values.image[0].response
+            mutate({...values, gallary: newGallary, image: newImage})
         } catch (error) {
             console.log(error)
         }
@@ -42,6 +45,7 @@ const AdminFormProduct = () => {
     }      
    const {data: product} = useProductQuery({id,})
   useEffect(() => {
+    console.log(product)
         if (!id) return;
         if (product) {
             form.setFieldsValue({
@@ -66,7 +70,7 @@ const AdminFormProduct = () => {
     };
   return (
    <>
-    <div className='container pt-[25px]'>
+    <div className='ml-[15%] pt-[25px]'>
         <div className="flex">
           <div className="w-[682px]">
             <h1 className='text-[2.5rem] text-center'>{id?"Update Product": "Add Product"}</h1>

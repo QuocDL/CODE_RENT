@@ -41,7 +41,7 @@ const SideBar = () => {
     }
 
   return (
-   <div className="sidebar h-screen lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900">
+   <div className="sidebar fixed h-screen lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900">
   <div className="text-gray-100 mt-[2.5rem] text-xl">
     <div  className="p-2.5 mb-[25px]  mt-1 flex justify-center items-center">
       <h1 className="font-bold text-gray-200 text-[15px] ml-3">Hello, {nameAdmin}</h1> 

@@ -1,4 +1,4 @@
-import {  NavLink } from "react-router-dom"
+import {  Link, NavLink } from "react-router-dom"
 import '../styles/header.scss'
 
 const Header = () => {
@@ -36,18 +36,18 @@ const Header = () => {
                         </nav>
                         <div className="header-action">
                             <div className="header-action-item">
-                                <img src="/public/user.png" alt="" />
+                                <img src="./public/user.png" alt="" />
                             </div>
                             <div className="header-action-item">
-                                <img src="/public/search.png" alt="" />
+                                <img src="./public/search.png" alt="" />
                             </div>
                             <div className="header-action-item">
-                                <img src="/public/heart.png" alt="" />
+                                <img src="./public/heart.png" alt="" />
                             </div>
                             <div className="header-action-item">
-                                <a href="./cart.html">
-                                    <img src="/public/cart.png" alt="" />
-                                </a>
+                                <Link to={'/cart'}>
+                                   Cart
+                                </Link>
                             </div>
                         </div>
                     </div>

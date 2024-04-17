@@ -77,7 +77,7 @@ const CartPage = () => {
                                             </td>
                                             <td>{convertCurrency.format(item.price)}</td>
                                             <td>
-                                                <button onClick={()=> mutate({action: "REMOVE", productId: item.productId})}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ48wQgJoZ7HBkR8cSs2u1tkb6F_YY_ujkJWnpZTJvaLg&s" width={30} alt="" /></button>
+                                                <button onClick={()=> mutate({action: "REMOVE", productId: item.productId})}>remove</button>
                                             </td>
                                         </tr>
                                        ))}

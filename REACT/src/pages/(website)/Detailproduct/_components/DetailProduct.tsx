@@ -1,7 +1,8 @@
+import { toast } from "react-toastify"
 import { IProduct } from "../../../../common/interfaces/Product"
 import { convertCurrency } from "../../../../common/lib/utils"
 
-const DetailProduct = ({product}: {product: IProduct}) => {
+const DetailProduct = ({product, mutate}: {product: IProduct, mutate: any}) => {
   return (
    <section className="detail">
   <div className="container">
@@ -71,7 +72,7 @@ const DetailProduct = ({product}: {product: IProduct}) => {
               <span>+</span>
             </div>
             <div className="detail_content_action__addcart">
-              <button>Add To Cart</button>
+              <button onClick={()=> mutate({action: "ADDCART", productId: product?._id, quantity: 1 }, {onSuccess: ()=> toast.success('Bạn đã thêm sản phẩm vào giỏ hàng thành công')})}>Add To Cart</button>
               <button>+ Compare</button>
             </div>
           </div>

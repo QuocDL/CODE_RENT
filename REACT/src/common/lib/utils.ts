@@ -17,7 +17,7 @@ export const convertCurrency = new Intl.NumberFormat('vi-VN',{
 interface UploadOptions {
   onSuccess: (url: string) => void;
   onError: (error: { event: Error }, file: File) => void;
-  file: File;
+  file: File[];
 }
 
 const uploadToCloudinary = async (options : UploadOptions) => {

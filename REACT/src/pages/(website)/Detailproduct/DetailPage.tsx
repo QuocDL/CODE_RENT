@@ -7,9 +7,12 @@ import axios from "axios"
 import Related from "./_components/Related"
 import Description from "./_components/Description"
 import '../../../styles/detail.scss'
+import useCart from "../../../common/hooks/useCart"
+import { ToastContainer } from "react-toastify"
 const DetailPage = () => {
     const {id} = useParams()
     const {data: product, } = useProductQuery({id: id!, _expand: "category"})
+    const {mutate} = useCart()
     const {data: relatedProduct}= useQuery({
         queryKey: ["PRODUCT_RELATED"],
         queryFn: async()=>{
@@ -20,9 +23,10 @@ const DetailPage = () => {
   return (
     <>
       <ActionBar action={product}/>
-      <DetailProduct product={product}/>
+      <DetailProduct mutate={mutate} product={product}/>
       <Description/>
       <Related related={relatedProduct}/>
+      <ToastContainer/>
     </>
   )
 }

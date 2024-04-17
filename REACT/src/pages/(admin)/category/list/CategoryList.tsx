@@ -59,9 +59,8 @@ const CategoryList = () => {
     <thead>
       <tr>
         <th data-priority={1}>#</th>
-        <th data-priority={2}>Name Category</th>
-        <th data-priority={3}>Slug</th>
-        <th data-priority={4}>Product Length</th>
+        <th data-priority={2}>Tên danh mục</th>
+        <th data-priority={4}>Số lượng sản phẩm</th>
         <th data-priority={5}>Action</th>
       </tr>
     </thead>
@@ -70,11 +69,9 @@ const CategoryList = () => {
          <tr key={index}>
         <td>{index + 1}</td>
         <td>{item?.name}</td>
-        <td>{item?.slug}</td>
         <td>{item?.products?.length}</td>
         <td>
             <div className="flex gap-5 items-center">
-                 <button onClick={()=> onHandleRemove(item)} className="w-[65px] h-[25px] rounded-[5px] bg-red-500 text-white">Remove</button>
                  <Link to={''} className="w-[65px] h-[25px] flex justify-center items-center rounded-[5px] bg-blue-500 text-white">Edit</Link>
             </div>
         </td>
@@ -82,7 +79,7 @@ const CategoryList = () => {
      ))}
     </tbody>
   </table>
-  {data.length === 0 && <div className='text-[2.5rem] text-center mt-[25px]'>Không có danh mục nào</div>}
+  {data?.length === 0 && <div className='text-[2.5rem] text-center mt-[25px]'>Không có danh mục nào</div>}
 </div>
 {dialog.status && <Dialog onDialog={conFirmDialog} message={dialog.message}/>}
 <ToastContainer/>
